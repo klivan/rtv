@@ -46,6 +46,7 @@ https://github.com/michael-lazar/rtv
   p     : Return to the front page
   r     : Refresh page
   u     : Login or logout
+  >     : Open the selected item's subreddit
   /     : Open the subreddit prompt
   f     : Open the search prompt
   ?     : Show the help screen

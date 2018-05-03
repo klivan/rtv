@@ -158,6 +158,18 @@ class SubredditPage(Page):
         if target is not None:
             self.refresh_content(order='ignore', name=target)
 
+    @SubredditController.register(Command('GOTO_SUBREDDIT'))
+    def goto_subreddir(self):
+        """
+        Open the selected item's subreddit.
+        """
+
+        data = self.get_selected_item()
+        subreddit = data.get('subreddit')
+
+        with self.term.loader('Loading page'):
+            self.refresh_content(order='ignore', name=subreddit)
+
     @SubredditController.register(Command('SUBREDDIT_OPEN'))
     def open_submission(self, url=None):
         """
